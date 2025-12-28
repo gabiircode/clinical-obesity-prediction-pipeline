@@ -1,57 +1,52 @@
 # Obesity Risk Stratification System (DSS)
 
-![Python](https://img.shields.io/badge/Python-3.10%2B-blue)
+![Python](https://img.shields.io/badge/Python-3.11%2B-blue)
 ![Streamlit](https://img.shields.io/badge/Streamlit-1.38%2B-red)
 ![Scikit-learn](https://img.shields.io/badge/ML-RandomForest-green)
 ![Status](https://img.shields.io/badge/Status-Completed-success)
 
 ## 📋 Sobre o Projeto
 
-Este projeto consiste em um **Sistema de Apoio à Decisão Clínica (CDSS)** voltado para a triagem e predição de níveis de obesidade. Utilizando algoritmos de Machine Learning treinados em dados antropométricos e comportamentais, a ferramenta oferece uma interface para profissionais de saúde estimarem riscos e analisarem padrões populacionais.
+Este projeto consiste em um **Sistema de Apoio à Decisão Clínica (CDSS)** voltado para a triagem e predição de níveis de obesidade. A ferramenta utiliza algoritmos de Machine Learning para processar dados antropométricos e comportamentais, oferecendo uma interface intuitiva para profissionais de saúde estimarem riscos e analisarem padrões populacionais.
 
-O sistema foi desenvolvido como parte do **Tech Challenge - Fase 4 (Data Analytics)**, demonstrando o ciclo completo de ciência de dados: desde a análise exploratória e engenharia de atributos até o deploy do modelo em produção.
+O projeto foi desenvolvido como entrega final do **Tech Challenge - Fase 4 (Data Analytics)**, englobando todo o ciclo de vida dos dados: Análise Exploratória (EDA), Pré-processamento, Treinamento de Modelo e Deploy em Produção.
 
-### 🎯 Objetivos
-- **Triagem Preditiva:** Classificação automática em 7 níveis de peso (do baixo peso à obesidade mórbida) com base em 16 variáveis.
-- **Inteligência Clínica:** Geração de laudos automáticos e insights sobre hábitos de risco (sedentarismo, dieta, hereditariedade).
-- **Gestão de Saúde:** Painel analítico para visualização de tendências epidemiológicas.
+🔗 **Link da Aplicação:** [INSIRA SEU LINK DO STREAMLIT AQUI]
 
 ---
 
-## ⚙️ Arquitetura e Tecnologia
+## 🧠 Principais Insights do Estudo
 
-O projeto segue uma arquitetura modular focada em reprodutibilidade:
+Durante a análise exploratória dos dados (disponível na pasta `notebooks`), foram identificados padrões comportamentais críticos que fundamentam as predições do modelo:
 
-* **Linguagem:** Python 3.11+
-* **Frontend/Dashboard:** Streamlit
-* **Machine Learning:** Scikit-learn (Random Forest Classifier)
-* **Processamento de Dados:** Pandas & Numpy
-* **Visualização:** Matplotlib (Customizado para relatórios clínicos)
-* **Persistência:** Joblib
-
-**Performance do Modelo:**
-* **Algoritmo:** Random Forest (Otimizado via GridSearch/Validação Cruzada)
-* **Acurácia Global:** ~97.8%
-* **Features:** 17 atributos (incluindo cálculo automático de IMC e tratamento de variáveis categóricas).
+1.  **O Peso da Genética:** O histórico familiar apresentou correlação extremamente forte com a obesidade (Graus I, II e III). Indivíduos com parentes obesos têm probabilidade significativamente maior de desenvolver a condição, independente de alguns fatores ambientais.
+2.  **Transporte Ativo vs. Passivo:** O uso de transporte público e caminhada mostrou-se um fator protetor, enquanto o uso frequente de automóveis está fortemente associado a níveis mais altos de IMC.
+3.  **O Perigo das "Beliscadas":** A variável `CAEC` (Comer entre refeições) demonstrou alto poder preditivo. Pacientes que relataram "comer frequentemente" entre as refeições principais tendem a migrar para as faixas de Sobrepeso e Obesidade.
+4.  **Hidratação:** O baixo consumo de água foi um traço comum nos grupos de maior risco, sugerindo que a hidratação pode ser um marcador indireto de consciência alimentar.
 
 ---
 
 ## 📂 Estrutura do Repositório
 
+O projeto segue uma arquitetura modular para garantir escalabilidade e reprodutibilidade:
+
 ```text
 /
 ├── app/
-│   └── app.py              # Aplicação principal (Frontend Streamlit)
+│   └── app.py                        # Frontend da aplicação (Streamlit)
 │
 ├── database/
-│   └── Obesity.csv         # Dataset original (UCI Repository)
+│   └── Obesity.csv                   # Dataset bruto (UCI Machine Learning Repository)
 │
 ├── models/
-│   ├── obesity_pipeline.joblib  # Pipeline treinado (Pré-processamento + Modelo)
-│   └── feature_columns.json     # Metadados das colunas para inferência
+│   ├── obesity_pipeline.joblib       # Pipeline serializado (Scaler + Encoder + Modelo)
+│   └── feature_columns.json          # Metadados para garantir a ordem das features
 │
 ├── notebooks/
-│   └── exploratory_analysis.ipynb # EDA, Feature Engineering e Treino
+│   └── 01_exploratory_analysis_train.ipynb  # Estudo detalhado, gráficos e treinamento
 │
-├── requirements.txt        # Dependências do projeto
-└── README.md               # Documentação
+├── outputs/
+│   └── metrics.json                  # Relatório de performance (Acurácia, F1-Score)
+│
+├── requirements.txt                  # Dependências do ambiente
+└── README.md                         # Documentação oficial
