@@ -51,6 +51,8 @@ O projeto segue uma arquitetura modular para garantir escalabilidade e reproduti
 ├── requirements.txt                  # Dependências do ambiente
 └── README.md                         # Documentação oficial
 
+---
+
 ## 📊 Funcionalidades do Sistema
 
 O sistema foi desenhado para atender duas personas distintas: o profissional que atende o paciente (clínico) e o gestor que analisa a saúde coletiva.
