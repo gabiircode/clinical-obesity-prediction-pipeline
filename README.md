@@ -50,3 +50,22 @@ O projeto segue uma arquitetura modular para garantir escalabilidade e reproduti
 │
 ├── requirements.txt                  # Dependências do ambiente
 └── README.md                         # Documentação oficial
+
+## 📊 Funcionalidades do Sistema
+
+O sistema foi desenhado para atender duas personas distintas: o profissional que atende o paciente (clínico) e o gestor que analisa a saúde coletiva.
+
+### 1. Triagem e Predição Individual (Aba "Predição")
+Focada na agilidade do atendimento clínico.
+* **Formulário Inteligente:** Interface dividida em cards temáticos (Perfil, Alimentação, Estilo de Vida) com inputs validados e UX intuitiva.
+* **Processamento em Tempo Real:** O sistema calcula o IMC automaticamente e processa 16 variáveis comportamentais através do modelo de Machine Learning.
+* **Suporte à Decisão:**
+    * Classificação preditiva em 7 níveis (do Baixo Peso à Obesidade Mórbida).
+    * **Semáforo de Risco:** Feedback visual (Verde/Amarelo/Vermelho) imediato para facilitar a leitura rápida.
+    * **Conduta Sugerida:** Exibição automática de orientações clínicas baseadas em diretrizes de saúde para cada perfil diagnosticado.
+
+### 2. Painel Estratégico (Aba "Painel Analítico")
+Focada na gestão de saúde populacional e epidemiologia.
+* **Filtros Dinâmicos:** Permite isolar grupos específicos (ex: analisar apenas pacientes com "Obesidade Grau I") para entender seus padrões exclusivos.
+* **Visualização Semântica:** Diferente de dashboards comuns, os gráficos utilizam cores funcionais de risco — **Vermelho** para comportamentos nocivos (ex: sedentarismo) e **Verde** para fatores protetores — eliminando a necessidade de interpretação complexa.
+* **Laudo Gerado por IA (NLG):** Um algoritmo de *Natural Language Generation* analisa estatisticamente o grupo filtrado e escreve automaticamente um relatório textual ("Laudo de Inteligência Clínica"), destacando os principais ofensores (como alta ingestão calórica ou histórico familiar) e sugerindo estratégias de intervenção coletiva.
