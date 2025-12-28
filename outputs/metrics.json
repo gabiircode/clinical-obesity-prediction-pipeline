@@ -1,0 +1,14 @@
+{
+  "accuracy": 0.9787234042553191,
+  "accuracy_percent": 97.87234042553192,
+  "target_col": "Obesity",
+  "classes": [
+    "Insufficient_Weight",
+    "Normal_Weight",
+    "Obesity_Type_I",
+    "Obesity_Type_II",
+    "Obesity_Type_III",
+    "Overweight_Level_I",
+    "Overweight_Level_II"
+  ]
+}
