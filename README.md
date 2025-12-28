@@ -50,7 +50,7 @@ O projeto segue uma arquitetura modular para garantir escalabilidade e reproduti
 │
 ├── requirements.txt                  # Dependências do ambiente
 └── README.md                         # Documentação oficial
-
+```
 ---
 
 ## 📊 Funcionalidades do Sistema
